@@ -21,7 +21,8 @@ public class DataSourceConfig {
     }
 
     @Bean
-    public PlatformTransactionManager platformTransactionManager(DataSource dataSource) {
+    @Primary
+    public PlatformTransactionManager transactionManager(DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
 }
